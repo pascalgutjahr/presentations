@@ -1,0 +1,109 @@
+\newcommand{\colorpalette}[1]{%
+
+	% color palette by Erich Schubert https://bitbucket.org/ls8-tudo/beamer-erich/src/template/
+	\xdefinecolor{tugreen}{RGB}{132, 184, 24} % source: official
+	\xdefinecolor{tudarkgreen}{RGB}{100, 150, 0} % source: official (purpose: web design)
+	\xdefinecolor{tulightgreen}{RGB}{224, 234, 204} % source: official (purpose: web design)
+	\xdefinecolor{tugray}{RGB}{207, 208, 210} % source: Powerpoint template diagram
+	\xdefinecolor{tugraybg}{RGB}{178, 179, 204} % source: official (purpose: web design)
+	\xdefinecolor{tuorange}{RGB}{227, 105, 19} % source: another template
+	\xdefinecolor{tuyellow}{RGB}{242, 189, 0} % source: another template
+	\xdefinecolor{tucitron}{RGB}{249, 219, 0} % source: another template
+	\xdefinecolor{tublue}{RGB}{46, 134, 171} % source: imaginary
+	\xdefinecolor{tudarkblue}{RGB}{30, 89, 114} % source: imaginary
+	\xdefinecolor{tuviolet}{RGB}{61, 52, 139} % source: imaginary
+	\xdefinecolor{tumagenta}{RGB}{139, 52, 88} % source: imaginary
+	\xdefinecolor{tudarkergreen}{RGB}{75, 98, 44} % source: Stefan Michaelis
+	\xdefinecolor{tuolive}{RGB}{83, 145, 45} % source: Stefan Michaelis
+	\xdefinecolor{tulime}{RGB}{215, 215, 0} % source: Stefan Michaelis
+	\xdefinecolor{tugraygreen}{RGB}{217,233,229} % source: Stefan Michaelis
+
+	% ML2R colors
+	\xdefinecolor{ml2rteal}{RGB}{0, 147, 145} % source: Powerpoint ML2R template
+	\xdefinecolor{ml2rblue}{RGB}{1, 105, 140} % source: Powerpoint ML2R template
+	\xdefinecolor{ml2rorange}{RGB}{250, 184, 47} % source: Powerpoint ML2R template
+	\xdefinecolor{ml2rgreen}{RGB}{128, 181, 44} % source: Powerpoint ML2R template
+
+	% gray tones
+	\colorlet{lightgray}{gray!25}
+	\colorlet{midlightgray}{gray!60}
+	\colorlet{anthracite}{black!85}
+
+	% switch between 'tu' and 'ml2r'
+	\ifthenelse{\equal{#1}{tu}}{%
+		\colorlet{tu01}{tugreen}
+		\colorlet{tu02}{tuorange}
+		\colorlet{tu03}{tuyellow}
+		\colorlet{tu04}{tucitron}
+		\colorlet{tu05}{tublue}
+		\colorlet{tu08}{tuviolet}
+		\colorlet{tu06}{tumagenta}
+		\colorlet{tu07}{tuolive}
+		\colorlet{tu09}{tulime}
+		\colorlet{tu10}{tudarkblue}
+		\colorlet{tu11}{tugraygreen}
+	}{\ifthenelse{\equal{#1}{ml2r}}{%
+		\colorlet{tu01}{ml2rgreen}
+		\colorlet{tu02}{ml2rorange}
+		\colorlet{tu03}{ml2rteal}
+		\colorlet{tu04}{ml2rblue}
+		\colorlet{tu05}{tuorange}
+		\colorlet{tu06}{tumagenta}
+		\colorlet{tu07}{tugraybg}
+		\colorlet{tu08}{tuviolet}
+		\colorlet{tu09}{tudarkgreen}
+		\colorlet{tu10}{tudarkblue}
+		\colorlet{tu11}{tulightgreen}
+	}{%
+		\GenericError{}{Error: \string\palette\space requires argument 'tu' or 'ml2r'}{}{}
+	}}
+
+	% mixed colors
+	\colorlet{tu01light}{tu01!40}
+	\colorlet{tu02light}{tu02!40}
+	\colorlet{tu03light}{tu03!40}
+	\colorlet{tu04light}{tu04!40}
+	\colorlet{tu05light}{tu05!40}
+	\colorlet{tu06light}{tu06!40}
+	\colorlet{tu07light}{tu07!40}
+	\colorlet{tu08light}{tu08!40}
+	\colorlet{tu09light}{tu09!40}
+	\colorlet{tu10light}{tu10!40}
+	\colorlet{tu11light}{tu11!40}
+
+	\colorlet{tu01midlight}{tu01!60}
+	\colorlet{tu02midlight}{tu02!60}
+	\colorlet{tu03midlight}{tu03!60}
+	\colorlet{tu04midlight}{tu04!60}
+	\colorlet{tu05midlight}{tu05!60}
+	\colorlet{tu06midlight}{tu06!60}
+	\colorlet{tu07midlight}{tu07!60}
+	\colorlet{tu08midlight}{tu08!60}
+	\colorlet{tu09midlight}{tu09!60}
+	\colorlet{tu10midlight}{tu10!60}
+	\colorlet{tu11midlight}{tu11!60}
+
+	\colorlet{tu01dark}{tu01!80!black}
+	\colorlet{tu02dark}{tu02!80!black}
+	\colorlet{tu03dark}{tu03!80!black}
+	\colorlet{tu04dark}{tu04!80!black}
+	\colorlet{tu05dark}{tu05!80!black}
+	\colorlet{tu06dark}{tu06!80!black}
+	\colorlet{tu07dark}{tu07!80!black}
+	\colorlet{tu08dark}{tu08!80!black}
+	\colorlet{tu09dark}{tu09!80!black}
+	\colorlet{tu10dark}{tu10!80!black}
+	\colorlet{tu11dark}{tu11!80!black}
+
+	\colorlet{tu01middark}{tu01!90!black}
+	\colorlet{tu02middark}{tu02!90!black}
+	\colorlet{tu03middark}{tu03!90!black}
+	\colorlet{tu04middark}{tu04!90!black}
+	\colorlet{tu05middark}{tu05!90!black}
+	\colorlet{tu06middark}{tu06!90!black}
+	\colorlet{tu07middark}{tu07!90!black}
+	\colorlet{tu08middark}{tu08!90!black}
+	\colorlet{tu09middark}{tu09!90!black}
+	\colorlet{tu10middark}{tu10!90!black}
+	\colorlet{tu11middark}{tu11!90!black}
+}

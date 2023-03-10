@@ -1,0 +1,274 @@
+% fix a0poster for compilation with lualatex
+% https://tex.stackexchange.com/a/411473
+\RequirePackage{luatex85}
+\RequirePackage{shellesc}
+\newcount\pdfshellescape
+\pdfshellescape=1 % unrestricted shell-escape
+
+\documentclass[a0,portrait]{a0poster}
+
+\input{preamble.tex}
+\input{header_footer.tex}
+
+% column layout
+\begin{multicols*}{3} % This is how many columns your poster will be broken into
+
+% first column -- each column has its own minipage
+\noindent
+\begin{minipage}[t][875mm][t]{2.1\columnwidth} % {\columnwidth}, height: 875mm
+\raggedright
+
+
+
+% ----------------------------------------------------------------------------------------
+%	 Introduction
+% ----------------------------------------------------------------------------------------
+\begin{sectionbox*}{Introduction \& Problem}
+  Large scale neutrino telescopes and muon tomography reconstruct 
+  incoming muons to estimate the initial direction of muon neutrinos and muons. 
+  Since muons propagate long distances before the detector entry, the deflection 
+  of the muon while the propagation has to be studied to estimate if the deflection 
+  has to be considered as a systematic uncertainty for the angular muon 
+  reconstruction. 
+\end{sectionbox*}
+
+\begin{sectionbox*}[tu02]{Methodology}
+  The lepton propagator PROPOSAL~\cite{proposal_koehne}, maintained here in Dortmund, is used to 
+  simulate the muon deflection. The tool provides different methods for 
+  multiple scattering and deflections by stochastic interactions are 
+  implemented recently. To estimate the deflections for neutrino telescopes 
+  such as IceCube or KM3NeT, muons are propagated through ice 
+  and water with different energies. 
+\end{sectionbox*}
+
+\begin{sectionbox*}[tu02]{Good Agreement with MUSIC and Geant4}
+  \begin{multicols*}{2}
+    Other common tools to simulate particles through matter are MUSIC~\cite{MUSIC} and Geant4~\cite{Geant4}. Here,
+    1 Mio. muons are propagated with energies of 2\,TeV through water over a distance of 3\,km. PROPOSAL provides deflection parametrizations of Geant4 and 
+    Van Ginneken (v.G.) and Molière and Highland scattering are studied.
+    \begin{itemize}
+      \item Good agreement in angular deflection 
+      \item Small deviations in lateral displacement $x$ 
+      \item Geant4 and PROPOSAL using Molière scattering lead to largest displacements
+      \item Larger displacements are caused by large deflections occurring at the beginning of the propagation
+    \end{itemize}
+    \columnbreak
+    % \FloatBarrier
+    \raggedleft
+    \includegraphics[width=0.43\textwidth]{img/2TeV_1e6events_accumulated_defl_paper_combined_zoom.pdf}
+  \end{multicols*}
+  \end{sectionbox*}
+
+% ========================================================================================
+% ...formatting examples
+
+% ----------------------------------------------------------------------------------------
+%	 Getting Started
+% ----------------------------------------------------------------------------------------
+
+
+
+
+
+% ----------------------------------------------------------------------------------------
+%  Colors 1)
+% ----------------------------------------------------------------------------------------
+\begin{sectionbox*}[tu02]{Good Data-MC Agreements}
+  Muon deflection measurements are performed by Attwood for 
+    muons propagated with energies of 199\,MeV through 
+    109\,mm liquid hydrogen and by Akimenko for muons 
+    propagated with energies of 7.3\,GeV through 
+    1.44\,cm copper. The deflections simulated with PROPOSAL are in good agreement with the data.
+  \begin{multicols*}{2}
+    \raggedright
+    \includegraphics[width=0.44\textwidth]{img/attwood_comparison_moliere_199MeV_final_multi_mean_deg.pdf}
+    \columnbreak
+    \raggedleft
+    \includegraphics[width=0.44\textwidth]{img/akimenko_comparison_moliere_E7301MeV_final_multi_mean_deg.pdf}
+  \end{multicols*}
+\end{sectionbox*}
+
+\begin{sectionbox*}{Results}
+  \begin{multicols*}{2}
+    \includegraphics[width=0.44\textwidth]{img/fit_median_defl_cut_10percent_only_poly_new_resolution_rescale_no_icecube_paper_final_all.pdf}
+    \columnbreak
+    \FloatBarrier
+    Muons are propagated through ice with several initial energies to different final energies. The lower the final energy, the larger the muon deflection. Since the medians overlap for different initial energies, the total muon deflection is 
+    nearly independent of the initial energy. Thus the muon energy reconstructed at the detector entry can be used to estimate the muon deflection before the entry. 
+    
+    All medians are fitted by a polynomial which can be used to estimate the muon deflection as a function of the final muon energy. The function can be found in Ref.~\cite{muon_deflection}.
+    (The deviations of the muon deflection for a propagation in water are less than 1\,\% for all energies.) 
+  \end{multicols*}
+\end{sectionbox*}
+
+
+\end{minipage}
+
+
+% \noindent
+% \begin{minipage}[t][515mm][t]{1\columnwidth} % {\columnwidth}, height: 875mm
+% \raggedright
+% ----------------------------------------------------------------------------------------
+%  Colors 2)
+% ----------------------------------------------------------------------------------------
+% \begin{sectionbox}[tu03]{Colors}
+%   A pre-defined color palette consists of \texttt{tu01}--\texttt{tu11}, each of which
+%   has the variations \texttt{tuXXlight}, \texttt{tuXXmidlight}, \texttt{tuXXmiddark}, and
+%   \texttt{tuXXdark}.
+
+%   The default color is \texttt{tu01}, above you can see \texttt{tu02}, and this here very
+%   box is set to \texttt{tu03}.
+% \end{sectionbox}
+
+% \begin{sectionbox*}{\texttt{Example: sectionbox*}}
+%   This is a \,\texttt{sectionbox*}\, environment.
+
+%   The star defines that no \,\texttt{\textbackslash vfill}\, is inserted after the box, i.e.
+%   the next box comes directly after this one.
+% \end{sectionbox*}
+
+
+% \begin{plainbox*}
+%   \begin{center}
+%     \Large This is a \,\texttt{plainbox}\, environment
+%   \end{center}
+% \end{plainbox*}
+
+% \begin{infobox}
+%   This is an \,\texttt{infobox}\, environment, floated to the bottom because the previous box
+%   did not use a star variant of \,\texttt{plainbox}\,.
+% \end{infobox}
+
+% ========================================================================================
+
+% column break
+% \end{minipage}
+% \columnbreak
+
+\noindent
+\begin{minipage}[t][875mm][t]{\columnwidth}
+\centering
+
+% \begin{plainbox*}
+% \end{plainbox*}
+% \hspace{415mm}
+
+
+% \begin{sectionbox}[tu04]{Resource constraints}
+%   What are the resource constraints of your methods/algorithms/application?
+%   Which constraints apply to the hardware you are using?
+% \end{sectionbox}
+
+
+
+% ========================================================================================
+% ...formatting example
+
+% \begin{plainbox*}
+%   Below you see the result of the command \texttt{\textbackslash maketakeawaybox},
+%   where you can hang DIN A4 printouts of your poster.
+
+%   This note has been set up with a \,\texttt{plainbox*}\, environment.
+% \end{plainbox*}
+
+
+% ----------------------------------------------------------------------------------------
+%  Takeaway Box
+% ----------------------------------------------------------------------------------------
+% \maketakeawaybox
+% ========================================================================================
+
+
+% column break
+\end{minipage}
+\columnbreak
+
+\noindent
+\begin{minipage}[t][875mm][t]{\columnwidth}
+\raggedleft
+
+% ----------------------------------------------------------------------------------------
+%  Results
+% ----------------------------------------------------------------------------------------
+
+
+
+
+
+
+% ----------------------------------------------------------------------------------------
+%  Conclusion and Outlook
+% ----------------------------------------------------------------------------------------
+
+\begin{sectionbox}{Conclusion}
+  Muon deflections simulated with the propagation tool PROPOSAL are in good agreement with common simulation 
+  tools MUSIC and Geant4 and two measurements. 
+  For muon energies below 3\,TeV, the muon deflection is 
+  on the same order of magnitude as the kinematic scattering angle between 
+  the incoming neutrino and the produced muon. In comparison with angular resolutions 
+  of current muon detectors, the muon deflections become relevant for energies 
+  below 1\,TeV. 
+\end{sectionbox}
+
+
+\begin{sectionbox}{Future Research}
+  So far, muon deflections are measured only for energies of 7.3\,GeV and lower.
+  To approve the correctness of the simulated muon deflection for higher energies, 
+  measurements of muons with energies up to TeV or even PeV are required.
+  Furthermore, the muon deflection has to be considered if the angular resolutions 
+  increase in future experiments and optimizations. 
+\end{sectionbox}
+
+\begin{sectionbox}[tu03]{Submission}
+  All results presented on this poster are submitted to the \textit{European Physics Journal C (EPJ C)} and they are already available 
+  on ArXiv under Ref.~\cite{muon_deflection}. 
+\end{sectionbox}
+
+% \begin{sectionbox}[tu03]{PROPOSAL}
+\begin{infobox}  
+  There is another PROPOSAL poster presented by Jean-Marco Alameddine at the REAML Summer School 2022.
+  You can also checkout our git repository 
+  \href{github.com/tudo-astroparticlephysics/PROPOSAL}{github.com/tudo-astroparticlephysics/PROPOSAL}.
+\end{infobox}
+  % \end{sectionbox}
+
+% ----------------------------------------------------------------------------------------
+%  References
+% ----------------------------------------------------------------------------------------
+\begin{plainbox*}
+  \nocite{*} % print uncited references
+  \bibliographystyle{unsrt} % plain reference style
+  \bibliography{\jobname}
+\end{plainbox*}
+
+
+% ----------------------------------------------------------------------------------------
+%  Author Section
+% ----------------------------------------------------------------------------------------
+\begin{infobox}
+  \begin{tikzpicture}
+    \node[anchor=north west, outer ysep=4pt, inner sep=0pt]
+      (title) at (0pt,0pt) {\bfseries\large Pascal Gutjahr};
+    \node[anchor=north east, outer sep=0pt, inner sep=4pt, rectangle, rounded corners=2pt, very thick, draw=black, fill=white]
+      (picture) at (\textwidth,0pt) {\includegraphics[height=75mm]{img/pascal}};
+
+    \node[anchor=north west, outer xsep=0pt, inner xsep=0pt, outer ysep=0mm, text width=.65\textwidth, yshift=-3pt]
+      (enumeration) at (title.south west) {%
+        \begin{itemize}
+          \item PhD student since 2021
+          \item PROPOSAL maintainer 
+          \item IceCube member 
+        \end{itemize}
+    };
+    \node[anchor=north west, outer xsep=0pt, inner xsep=0pt, outer ysep=1mm, text width=.65\textwidth]
+      (text) at (enumeration.south west) {%
+        
+      };
+  \end{tikzpicture}
+\end{infobox}
+\end{minipage}
+% ----------------------------------------------------------------------------------------
+
+
+\end{multicols*}
+\end{document}

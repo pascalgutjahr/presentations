@@ -1,0 +1,50 @@
+% ----------------------------------------------------------------------------------------
+%	POSTER HEADER
+% ----------------------------------------------------------------------------------------
+\begin{tikzpicture}[overlay, remember picture]
+    % actual north-west and nort-east, with 25mm offset that must be corrected and with custom margins
+    \coordinate (page north west) at ($(current page.north west) + (25mm,25mm) + ( 48mm, -35mm)$);
+    \coordinate (page north east) at ($(current page.north east) + (25mm,25mm) + (-48mm, -35mm)$);
+    \coordinate (page south west) at ($(current page.south west) + (25mm,25mm) + ( 48mm,  35mm)$);
+    \coordinate (page south east) at ($(current page.south east) + (25mm,25mm) + (-48mm,  35mm)$);
+
+    % logos
+    \tikzset{logo node/.style={inner ysep=0pt, minimum height=60mm, inner xsep=2mm}}
+    \node[anchor=north east, logo node] (logo s876) at (page north east) {\includegraphics[height=50mm]{img/logo-s876}};
+    \node[anchor=north west, logo node] (logo tu) at (page north west) {\includegraphics[height=32mm]{img/logo-tu}};
+
+    % top header line
+    \coordinate (below logos) at ($(logo tu.south west) - (0mm,8mm)$);
+    \draw[tu01, line width=1mm, line cap=round] (page north west|-below logos) -- (page north east|-below logos);
+
+    % title, authors, affiliation, e-mail
+    \tikzset{text node/.style={anchor=north west, outer sep=0pt, inner xsep=2mm}}
+    \node[text node] (title) at ($(below logos) - (0mm,10mm)$)
+        {\sffamily\bfseries\Huge\strut Muon Deflection Simulation Using PROPOSAL}; % THE TITLE OF THE WORK
+    \node[text node] (authors) at (title.south west)
+        {\sffamily\huge\strut Pascal Gutjahr}; % THE AUTHORS
+    \node[text node] (affiliation1) at (authors.south west)
+        {\sffamily\large\strut TU Dortmund, SFB 876 -  Project C3, Rhode WG, 44227 Dortmund, Germany}; % THE AFFILIATION
+    \node[text node] (email) at (affiliation1.south west)
+        {\sffamily\large\texttt{pascal.gutjahr@tu-dortmund.de}}; % E-MAILS
+
+    % bottom of header line
+    \coordinate (below email) at ($(email.south west) - (0mm,10mm)$);
+    \draw[tu01, line width=1mm, line cap=round] (page north west|-below email) -- (page north east|-below email);
+
+    % conference watermark -- IF YOU ONLY NEED ONE LINE HERE, USE THE (conference) NODE AND REMOVE THE (workshop) NODE
+    \node[anchor=south east, tu01midlight] (conference) at (page north east|-email.south west) {\sffamily\bxseries\large 6th International Summer School on Resource-aware Machine Learning};
+    \node[anchor=south east, tu01midlight] (workshop) at (conference.north east) {\sffamily\bxseries\huge REAML Summer School \hspace{.5pt} 2022};
+
+    % acknowledgment text in the footer
+    \node[anchor=south east, outer sep=0pt, align=right] (footer) at (page south east) {\sffamily$^\star$
+    Supported by Deutsche Forschungsgemeinschaft (DFG) within the Collaborative Research Center SFB 876
+    ``Providing Information by Resource-Constrained Data Analysis'',\\ DFG project number 124020371, project C3.};
+
+    % footer line
+    \coordinate (above footer) at ($(footer.north west) + (0mm,5mm)$);
+    \draw[tu01, line width=1mm, line cap=round] (page south west|-above footer) -- (page south east|-above footer);
+\end{tikzpicture}
+
+\vspace{174mm} % height of header -- INCREASE THIS LENGTH IF YOU NEED MORE LINES IN THE HEADER
+% \enlargethispage{-25mm} % height of footer
