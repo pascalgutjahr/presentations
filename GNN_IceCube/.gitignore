@@ -1,0 +1,9 @@
+*.aux
+*.auxlock
+*.bbl
+*.blg
+*.log
+*.out
+*.thm
+poster-template.pdf
+print-poster-template.pdf

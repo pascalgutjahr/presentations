@@ -1,0 +1,25 @@
+# Fdb version 4
+["pdflatex"] 1682584964 "/Users/pgutjahr/Documents/presentations/GNN_IceCube/poster-template.tex" "poster-template.pdf" "poster-template" 1682584964 2
+  "/Users/pgutjahr/Documents/presentations/GNN_IceCube/poster-template.tex" 1674656092 11440 2192fc31177efb7342f5ae5a7879555d ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmr17.tfm" 1136768653 1292 296a67155bdbfc32aa9c636f21e91433 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/generic/luatex85/luatex85.sty" 1466003200 5870 5c4dd54f0f0c0983167985107b28c800 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls" 1667332637 20144 d5ecf0a5140c8d8d8b72cbe86e320eff ""
+  "/usr/local/texlive/2022/texmf-dist/tex/latex/base/size10.clo" 1667332637 8448 c33a4e1cb35cee9b33c2b21033b73e39 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/latex/fontspec/fontspec.sty" 1642282977 1656 7e824878bad4df5a3e8bba4e463d9126 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1666901542 30426 f2fb69fcda4dc35ed0b7dee211bce679 ""
+  "/usr/local/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty" 1671310534 6107 386d6336ccdc5637fb2ac440a8c4ecaa ""
+  "/usr/local/texlive/2022/texmf-dist/tex/latex/l3packages/xparse/xparse.sty" 1671310555 6812 c155095bd0101370166071972167f9ce ""
+  "/usr/local/texlive/2022/texmf-dist/tex/latex/tools/shellesc.sty" 1654720880 4118 0aa319c56935d7d217b6a8bf300b81b7 ""
+  "/usr/local/texlive/2022/texmf-dist/web2c/texmf.cnf" 1646502317 40171 cdab547de63d26590bebb3baff566530 ""
+  "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1671639197 7874837 3e5969dbe4ca7acd2c52a6439eeab5ed ""
+  "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
+  "a0poster.cls" 1661939808 6176 37402c6052502599d35b9e16a21767aa ""
+  "a0size.sty" 1661939808 7728 3b92cf7fd22bdf46734222814afe7554 ""
+  "poster-template.aux" 1682584964 32 3985256e7290058c681f74d7a3565a19 ""
+  "poster-template.tex" 1674656092 11440 2192fc31177efb7342f5ae5a7879555d ""
+  "preamble.tex" 1662196105 7469 6c9b45b06edeb6d97ec7313c8b9db740 ""
+  (generated)
+  "poster-template.log"
+  "poster-template.pdf"
+  (rewritten before read)

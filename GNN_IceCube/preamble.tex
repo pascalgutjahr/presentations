@@ -1,0 +1,230 @@
+
+% TU DORTMUND-LIKE FONT
+\usepackage[no-math]{fontspec}
+\setsansfont[
+    Ligatures = TeX,
+    BoldFont = FiraSans,
+    ItalicFont = FiraSans-LightItalic,
+    BoldItalicFont = FiraSans-Italic,
+    FontFace = {bxx}{n}{FiraSans-SemiBold}
+]{FiraSans-Light}
+\newcommand{\bxseries}{\fontseries{bxx}\selectfont}
+% \usefonttheme[onlymath]{serif}
+
+% TIKZ
+\usepackage[pdftex]{graphicx,color}
+\DeclareGraphicsExtensions{%
+    .pdf,.PDF,%
+    .png,.PNG,%
+    .jpg,.jpeg,.JPG,.JPEG}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usetikzlibrary{calc,patterns,shapes,positioning,arrows.meta}
+\usetikzlibrary{decorations.pathreplacing}
+\usepgfplotslibrary{fillbetween}
+
+
+
+% COLOR PALETTE
+\usepackage{ifthen}
+\input{img/colorpalette.tex}
+\colorpalette{tu} % OR: \colorpalette{ml2r}
+
+
+
+% COLUMNS
+\usepackage{multicol}
+\columnsep=16mm      % white space between columns
+\columnseprule=0pt    % thickness of line between columns
+% \renewcommand{\columnseprulecolor}{\color{gray}}
+
+% ENUMERATIONS
+\usepackage{enumitem}
+\newcommand*\tubullet{%
+    \begin{tikzpicture}
+        \draw[ultra thick, gray, fill=tu01] (0, 0) circle[radius=5pt];
+    \end{tikzpicture}
+}
+\setlist{%
+    labelindent=0pt,
+    labelwidth=*,
+    labelsep*=6mm,
+    itemindent=0cm,
+    leftmargin=!,
+    topsep=0pt,
+    font={\bfseries\sffamily\normalsize}
+}
+\setlist[itemize]{label=\raisebox{4pt}{\protect\tubullet}}
+\setlist[description]{itemsep=\parskip}
+
+% BOX LAYOUT
+\newcommand{\resettikz}{\tikzset{every node/.style={text width=, minimum width=0pt, inner sep=10pt, font=\normalsize}, every path/.style={thick}}} % do not inherit
+\newcommand{\resetfont}{\sffamily\normalsize}
+\newcommand{\plainsection}[1]{\resetfont\noindent\begin{center}\bfseries\Large#1\end{center}\vspace*{2mm}}
+\newcommand{\plainsubsection}[1]{\resetfont\noindent{\bfseries\large#1}}
+
+\usepackage{etoolbox} % provides \patchcmd
+\renewcommand{\refname}{References}
+\patchcmd{\thebibliography}{\section*}{\plainsection}{}{}
+
+\renewcommand{\section}[2][tu01]{%
+    \noindent
+    \begin{tikzpicture}
+        \node[white,
+            fill = #1,
+            draw = none,
+            rounded corners = 12pt,
+            minimum width = \columnwidth,
+            inner xsep = 0pt,
+            inner ysep = 5pt,
+            outer sep = 0pt,
+            text height = 14mm,
+            text width = .85\columnwidth,
+            align = center,
+            use as bounding box] (title) at (0,0) {\resetfont\bfseries\Large #2\strut};
+        \fill[#1] ($(title.south west) + (0pt,12pt)$) -- ++(0pt,-12pt) -- ++(12pt,0pt) -- cycle;
+        \fill[#1] ($(title.south east) + (0pt,12pt)$) -- ++(0pt,-12pt) -- ++(-12pt,0pt) -- cycle;
+    \end{tikzpicture}%
+}
+
+\usepackage{environ} % provides the \NewEnviron command for custom environments
+
+% basic implementation of the sectionbox and sectionbox* environments (see below)
+\NewEnviron{innersectionbox}[2][tu01]{%
+    \noindent
+    \begin{minipage}{\columnwidth}
+        \section[#1]{#2}
+        \vskip -2pt % perfect alignment (if different colors are used for the heading and the box) with -2.025pt
+        \noindent
+        \begin{tikzpicture}
+            \node[minimum width = \columnwidth,
+                text width = .85\columnwidth,
+                text justified,
+                inner sep = 20pt,
+                outer sep = 0pt,
+                use as bounding box] (body) at (0,0) {\resettikz\resetfont\setlength{\parskip}{9mm}\vspace*{-9mm}\par\BODY};
+            \draw[#1midlight,
+                line width = 2pt,
+                rounded corners = 12pt] ($(body.north west) + ( 1pt,0pt)$) -- ($(body.south west) + ( 1pt,-6mm)$) --
+            ($(body.south east) + (-1pt,-6mm)$) -- ($(body.north east) + (-1pt,0pt)$);
+        \end{tikzpicture}
+    \end{minipage}
+}
+
+% non-starred (default) version with an additional vfill
+\newenvironment{sectionbox}[2][tu01]{\innersectionbox[#1]{#2}}{%
+\endinnersectionbox
+\vskip 16mm plus 1fill % additional fill
+}
+
+% starred version without vfill
+\newenvironment{sectionbox*}[2][tu01]{\innersectionbox[#1]{#2}}{%
+\endinnersectionbox
+\vskip 16mm % just the minimal vskip
+}
+
+\NewEnviron{innerinfobox}[1][tu01light]{%
+    \noindent
+    \begin{minipage}{\columnwidth}
+        \noindent
+        \begin{tikzpicture}
+            \node[draw = #1,
+                fill = #1,
+                minimum width = \columnwidth,
+                text width = .85\columnwidth,
+                text justified,
+                inner sep = 40pt,
+                outer sep = 0pt,
+                rounded corners = 12pt,
+                use as bounding box] (body) at (0,0) {\resettikz\resetfont\setlength{\parskip}{9mm}\vspace*{-9mm}\par\BODY};
+        \end{tikzpicture}
+    \end{minipage}
+}
+\newenvironment{infobox}[1][tu01light]{\innerinfobox[#1]}{%
+\endinnerinfobox
+\vskip 16mm plus 1fill
+}
+\newenvironment{infobox*}[1][tu01light]{\innerinfobox[#1]}{%
+\endinnerinfobox
+\vskip 16mm
+}
+
+\NewEnviron{innerplainbox}{%
+    \noindent
+    \vskip -9mm
+    \begin{minipage}{\columnwidth}
+        \noindent
+        \begin{tikzpicture}
+            \node[minimum width = \columnwidth,
+                text width = \columnwidth,
+                text justified,
+                inner sep = 0pt,
+                outer sep = 0pt,
+                use as bounding box] (body) at (0,0) {\resettikz\resetfont\BODY};
+        \end{tikzpicture}
+    \end{minipage}
+}
+\newenvironment{plainbox}{\innerplainbox}{%
+\endinnerplainbox
+\vskip 16mm plus 1fill
+}
+\newenvironment{plainbox*}{\innerplainbox}{%
+\endinnerplainbox
+\vskip 16mm
+}
+
+\newcommand{\maketakeawaybox}[1][midlightgray]{%
+    \begin{minipage}{.95\columnwidth}
+        \noindent
+        \centering
+        \begin{tikzpicture}
+            \node[use as bounding box, % draw = red,
+                minimum width = 210mm,
+                minimum height = 297mm] (a4) at (0,0) {}; % DIN A4
+            \node[anthracite, text width = 180mm, align = center, rotate = 6] at (a4) {\resetfont\bfseries If all prints are gone,\\[1em]please ask for a soft copy!};
+            \draw[midlightgray] (-60mm,148.5mm) -- (-70mm, 148.5mm)  (60mm,148.5mm) -- (70mm, 148.5mm); % cut marks
+            \node[draw = #1,
+                line width = 2pt,
+                dashed,
+                rounded corners = 10pt,
+                minimum width = 190mm,
+                minimum height = 277mm] at (0,0) {};
+            \node[above = 3mm of a4] (arr) {%
+                \begin{tikzpicture}[scale = 6, rotate = 270]
+                    \fill[tu01] (0.375,0) -- (0.5,0) -- (0.5,-0.1) -- (0.725,0.15) -- (0.5,0.4) -- (0.5,0.3) -- (0.375,0.3) -- (0.375,0);
+                \end{tikzpicture}
+            };
+            \node[above = 0mm of arr] {\resetfont\bfseries\Large Take this poster with you!};
+        \end{tikzpicture}
+    \end{minipage}
+    \vskip 16mm plus 1fill
+}
+
+% MATH
+\usepackage{amsmath,amssymb,amsfonts,accents}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\newcommand{\cX}{\mathcal{X}}
+\newcommand{\cY}{\mathcal{Y}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\mR}{\mathbb{R}}
+\newcommand{\mP}{\mathbb{P}}
+
+\usepackage[
+    locale=US,
+    separate-uncertainty=true,
+    per-mode=fraction,    
+   print-unity-mantissa = false,
+]{siunitx}
+\DeclareSIUnit\clight{\text{\ensuremath{c}}}
+\sisetup{math-micro=\text{µ},text-micro=µ}
+
+\usepackage[linkcolor=blue, colorlinks=true, citecolor=black]{hyperref}
+\usepackage{placeins}
+
+\begin{document}
+    \resetfont
