@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="299d8062-5f07-47e5-b2fd-f2204ef2d7c2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/header_footer.tex" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/preamble.tex" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/amal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/logo-ml2r.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/img/mirko.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/poster-template.bib" beforeDir="false" afterPath="$PROJECT_DIR$/poster-template.bib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/poster-template.tex" beforeDir="false" afterPath="$PROJECT_DIR$/poster-template.tex" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2AtKcM9YpjOT5Sl4oeHRdAdT6aI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunManager" selected="Makefile Target.Poster">
+    <configuration name="Poster" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="poster-template.pdf" workingDirectory="$PROJECT_DIR$" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="clean" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="clean" workingDirectory="$PROJECT_DIR$" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Makefile Target.clean" />
+      <item itemvalue="Makefile Target.Poster" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="299d8062-5f07-47e5-b2fd-f2204ef2d7c2" name="Changes" comment="" />
+      <created>1655823524126</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1655823524126</updated>
+      <workItem from="1655823527280" duration="7907000" />
+      <workItem from="1655985112613" duration="614000" />
+      <workItem from="1656318972412" duration="506000" />
+      <workItem from="1656689493778" duration="2250000" />
+      <workItem from="1658959837129" duration="1778000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

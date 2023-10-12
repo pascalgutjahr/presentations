@@ -1,0 +1,26 @@
+\begin{thebibliography}{1}
+
+\bibitem{proposal_koehne}
+J.-H. Koehne, K.~Frantzen, M.~Schmitz, T.~Fuchs, W.~Rhode, D.~Chirkin, and
+  J.~Becker Tjus.
+\newblock {PROPOSAL: A tool for propagation of charged leptons}.
+\newblock {\em Comput. Phys. Commun.}, 184(9):2070--2090, 2013.
+
+\bibitem{MUSIC}
+P.~Antonioli, C.~Ghetti, E.V. Korolkova, V.A. Kudryavtsev, and G.~Sartorelli.
+\newblock A three-dimensional code for muon propagation through the rock:
+  {MUSIC}.
+\newblock {\em Astropart. Phys.}, 7:357--368, 1997.
+
+\bibitem{Geant4}
+{Geant4 Collaboration}.
+\newblock {\em Geant4 Physics Reference Manual}, 11.0 edition, 2021.
+
+\bibitem{muon_deflection}
+P.~Gutjahr, J.-M. Alameddine, A.~Sandrock, J.~B. Soedingrekso, M.~Hünnefeld,
+  and W.~Rhode.
+\newblock {Simulation of Deflection Uncertainties on Directional
+  Reconstructions of Muons Using PROPOSAL}.
+\newblock submitted to EPJ C, 2022.
+
+\end{thebibliography}
