@@ -1,0 +1,16 @@
+Title:
+An analysis concept to measure atmospheric prompt muons with IceCube
+
+Abstract:
+When cosmic rays hit the Earth's atmosphere, extensive air showers are initiated. The secondary particles produced are divided into 
+two components: long-lived, light mesons such as pions and kaons referred to as conventional and short-lived, heavy charmed and 
+unflavored mesons referred to as prompt. Both components decay further into muons and neutrinos, 
+which are detected with cherenkov and neutrino telescopes. In several 
+air shower experiments, muons have been detected more frequently than expected based on simulation. 
+To solve this problem, the ratio of the produced pions and kaons 
+can be adopted. This ratio can be analyzed by measuring the atmospheric muon and neutrino flux, as muon production is dominated by
+pions and neutrino production is dominated by kaons. Additionally, hadron production at energies of PeV and above has 
+large systematic uncertainties due to missing data, as the hadronic interaction models are extrapolated.
+
+In this talk, a concept to measure the atmospheric muon flux at high energies using the IceCube Neutrino Observatory is presented. The 
+main objective is to measure the normalization of the prompt component to constrain the uncertainties in the hadronic interaction models. 
