@@ -3,14 +3,17 @@ An analysis concept to measure atmospheric prompt muons with IceCube
 
 Abstract:
 When cosmic rays hit the Earth's atmosphere, extensive air showers are initiated. The secondary particles produced are divided into 
-two components: long-lived, light mesons such as pions and kaons referred to as conventional and short-lived, heavy charmed and 
-unflavored mesons referred to as prompt. Both components decay further into muons and neutrinos, 
+two components: long-lived, light mesons such as pions and kaons referred to as conventional particles and short-lived, heavy charmed and 
+unflavored mesons referred to as prompt particles. Both components decay further into muons and neutrinos, 
 which are detected with cherenkov and neutrino telescopes. In several 
-air shower experiments, muons have been detected more frequently than expected based on simulation. 
-To solve this problem, the ratio of the produced pions and kaons 
-can be adopted. This ratio can be analyzed by measuring the atmospheric muon and neutrino flux, as muon production is dominated by
-pions and neutrino production is dominated by kaons. Additionally, hadron production at energies of PeV and above has 
-large systematic uncertainties due to missing data, as the hadronic interaction models are extrapolated.
+air shower experiments, muons have been observed more frequently than expected based on simulation. 
+To understand this discrepancy, also referred to as the muon puzzle, the ratio of pions and kaons may be studied. 
+This ratio can be analyzed by measuring the atmospheric muon and neutrino flux, as muon production is dominated by
+pions and neutrino production is dominated by kaons. 
+Additionally, hadron production in forward direction and at energies of PeV and above are not well constrained by particle accelerator 
+experiments, leading to large uncertainties in hadronic interaction models. Analyses of the atmospheric muon and neutrino fluxes will 
+provide crucial measurements in this phase space.
 
-In this talk, a concept to measure the atmospheric muon flux at high energies using the IceCube Neutrino Observatory is presented. The 
+In this contribution, a first step towards these goals is presented by a concept to measure the atmospheric muon flux at 
+high energies using the IceCube Neutrino Observatory. The 
 main objective is to measure the normalization of the prompt component to constrain the uncertainties in the hadronic interaction models. 
