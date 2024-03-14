@@ -1,0 +1,19 @@
+1. High level 
+- Introduction/Motivation (Muon-Puzzle, hadronic interaction models, neutrinos + muons) [1-2]
+- Goal: 1. muon spectrum (unfolding without prior), 2. normalization prompt component 
+    (forward fit for specific model) [1]
+- Overview (schematic: Simulation - Selection - Reconstruction - forward fit/ unfolding) [1]
+- Forward fit: bias plot, prompt scaling plot (slide 55 rights), test statistics plot (toy study, maybe 
+    we switch to NNMFit) [2]
+- Unfolding: explain unfolding, unfold event rate, explain effective area, unfold muon flux? [3-4]
+- Summary (new simulation, systematics, WG request) [1]
+
+
+
+2. Details
+- Introduction [1]
+- Pipeline (Selection / Reconstruction) [1-2]
+- Data-MC Observablen + Rest (with quality cuts) [3-4]
+- Impact of systematics (Snowstorm, for analysis -> more statistics needed) [3-4]
+- New simulation (new ice model, iceprod, settings, latest software) [2]
+- Summary (estimates for storage request) [1]
